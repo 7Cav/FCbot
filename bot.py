@@ -1,28 +1,16 @@
+import discord
+import requests
 import subprocess
 import sys
 import config as cfg
-
 
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 
-
 install('discord.py')
-
-
-
-import discord
-
-
-def read_file(file_name):
-	try:
-		file = open(file_name, 'r')
-		data = file.read()
-		return data
-	except:
-		return file_name + " not found."
+url = 'https://raw.githubusercontent.com/7Cav/FCbot/master/info.txt'
 
 
 class MyClient(discord.Client):
@@ -31,13 +19,14 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         if message.content.startswith('!'):
-        	file_name = message.content.replace('!', '').lower() + '.txt'
-        	data = read_file(file_name)
-        	await message.channel.send(data)
+            raw = requests.get(url)
+            data = raw.text
+            await message.channel.send(data)
+
 
 try:
-	client = MyClient()
-	client.run(cfg.token)
+    client = MyClient()
+    client.run(cfg.token)
 except Exception as e:
-	print(e)
-	input()
+    print(e)
+    input()
