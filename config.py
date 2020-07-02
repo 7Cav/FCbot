@@ -1,1 +1,1 @@
-token = '${{ secrets.SECRET_NAME }}'
+token = '${{ secrets.DISCORD_SECRET }}'
