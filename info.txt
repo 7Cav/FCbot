@@ -1,4 +1,4 @@
-Carrier info - 
+Grace's Fleet Carrier News:
 Name = [7CAV] FNS - Dauntless VHK-4QZ 
 Current Location = GCRV 1568 AB 1 D   [ For 3 Days ]
 Scheduled Location = SWOILZ PK-R B20-0 
