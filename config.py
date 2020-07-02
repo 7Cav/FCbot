@@ -1,1 +1,1 @@
-token = 'NzI4Mjc2MTQ4OTE5NzMwMzI2.Xv4H9Q.ouGJjKMgxDiI04wH8rY13hKjHF8'
+token = '${{ secrets.SECRET_NAME }}'
