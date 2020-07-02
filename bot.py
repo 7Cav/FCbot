@@ -3,6 +3,7 @@ import requests
 import subprocess
 import sys
 import config as cfg
+import time
 
 
 def install(package):
@@ -19,8 +20,8 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         if message.content.startswith('!'):
-            raw = requests.get(url)
-            data = raw.text
+            res = requests.get(url)
+            data = res.text
             await message.channel.send(data)
 
 
